@@ -1,0 +1,13 @@
+siteUid: null
+sortOrder: 1
+template: news/_archive
+uriParts:
+  - news/
+  -
+    - year
+    - '\d{4}'
+  - /
+  -
+    - month
+    - '(?:0?[1-9]|1[012])'
+uriPattern: 'news/<year:\d{4}>/<month:(?:0?[1-9]|1[012])>'

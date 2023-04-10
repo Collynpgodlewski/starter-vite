@@ -1,0 +1,12 @@
+{% set news = craft.entries.section('news').limit(10).all() %}
+
+{% for new in news %}
+
+
+{# conditional styling #}
+
+
+<h1><a href="{{new.url}}" >{{ new.title }}</a></h1>
+<p>by {{ new.Author }} on {{ new.postDate | date('M, d, Y') }} </p>
+{{ new.body }}
+{% endfor %}

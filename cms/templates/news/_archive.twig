@@ -1,0 +1,29 @@
+<h1>Ya it aint work</h1>
+
+
+    {% for entry in CRAFT_DATA %} {# Everything is twig besides the Craftdata #}
+        {{ entry.CRAFT_DATA }} 
+    {% endfor %}
+
+
+
+    {% set entries  = craft.entries.section('news').limit(25).all() %}  {# sets variable so it only has to retrieve once. Underneath iterates over it#}
+
+
+
+    {% for entry in craft.entries.section('blog').all() %}  {# craft. is global variable.  #}
+        {{ entry.title }} {# Properties / field in craft#}   {# entries is a method 'ask for', what type of data. #}
+    {% endfor %}                                            {# Retrieve the content from the section ('blog') as the argument. .all() executes.#} 
+                                                            {#The whole line is an element query. #}
+
+
+
+
+    {% set ages = 1..100 %}
+    <select name='age'>
+        {% for age in 1..100 %} {# for age in ages #}
+            <option value='{{ age }}'>{{ age }}<option>   {# Pure twig code #}
+            {% endfor %}
+    </select>
+
+    {# Craft is data, twig is language #}
